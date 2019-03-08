@@ -2,9 +2,9 @@
 
 <button type="button" class="btn btn-primary" name="button" onclick={startPlay} >start play</button>
 
-<p if={this.playState==="startPlay"}> No.{this.turns} turn: treasure is {this.treasure}</p>
-<p if={this.playCardState==="CardPlay"}> Now, {this.userName} have {this.userTotalTeasure} treasure in total</p>
-<p if={this.playCardState==="CardPlay"}> Now, {this.opponent} have {this.oppoTotalTeasure} treasure in total</p>
+<p if={this.playState==="startPlay"}> No.{this.turns} turn: The treasure value is {this.treasure}</p>
+<p if={this.playCardState==="CardPlay"}> {this.userName} has a total treasure value of {this.userTotalTeasure}.</p>
+<p if={this.playCardState==="CardPlay"}> {this.opponent} has a total treasure value of {this.oppoTotalTeasure}.</p>
 <div class="">
 <button type="button" class="btn btn-success mr-md-2" name={item} id={item} onclick={playCard} each={item, i in allCards} show={this.playState==="startPlay"} >{item}</button>
 </div>

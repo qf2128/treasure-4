@@ -11,18 +11,18 @@
         <h2> Choose your opponent</h2>
         <select class="custom-select" name="" onchange={updateNewGameType}>
             <option value="">---</option>
-            <option value="autoplay">Play with Bot</option>
-            <option value="invite">Invite a friend to play</option>
+            <option value="autoplay">Play against a Bot</option>
+            <option value="invite">Play against a friend</option>
         </select>
    </div>
 
    <div class="tellID" show={this.gameState==="invite"}>
-     <p> please tell your friend your room Id:  {this.gameId} </p>
+     <p> Please give your friend the room Id:  {this.gameId} </p>
    </div>
   </div>
 
   <div if={this.gameState==="invite"}>
-     <p>Get ready to play with your frinds?</p>
+     <p>Get ready to play with your friend</p>
      <button type="button" name="button" class="btn btn-primary" onclick={startGameFriend}>Start game</button>
   </div>
 
