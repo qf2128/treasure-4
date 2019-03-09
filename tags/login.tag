@@ -63,10 +63,8 @@ stateLogin(){
  }
 
  .center{
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
-   width: 50%;
+   margin-left:27%;
+
 }
  .center2{
   text-align: center;

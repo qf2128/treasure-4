@@ -7,7 +7,7 @@
         <play if={this.gameState==="autoplay"}></play>
    </div>
 
-   <div class="row" if={this.state==="newGame"} hide={this.gameState==="autoplay"}>
+   <div class="row1" if={this.state==="newGame"} hide={this.gameState==="autoplay"}>
         <h2> Choose your opponent</h2>
         <select class="custom-select" name="" onchange={updateNewGameType}>
             <option value="">---</option>
@@ -118,7 +118,7 @@ join(){
    padding-left: 13%;
  }
 
- .row {
+ .row1 {
    padding-top: 30%;
    padding-left: 20%;
    margin-right: 40%;
