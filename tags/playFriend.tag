@@ -1,6 +1,6 @@
 <playFriend>
     <div class="">
-      <p>Get ready to play with your frinds?</p>
+      <p>Get ready to play with your friend!</p>
       <button type="button" name="button" class="btn btn-primary" onclick={startGame}>Start game</button>
     </div>
 
