@@ -6,7 +6,7 @@
 
  <div class="row">
    <div class="left">
-    <input type="text" value="" placeholder="input your User ID" ref="userId">
+    <input type="text" class="userId" value="" placeholder="input your User ID" ref="userId">
    </div>
    <div class="right">
     <button type="button" class="btn btn-primary" onclick="{getChrisDataOldId}">SUBMIT</button>
@@ -47,7 +47,7 @@ console.log(this.stats)
 <style>
 
 :scope{}
-input{
+.userId{
   font-size: 25px;
 }
 .center{

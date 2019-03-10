@@ -4,7 +4,7 @@
   </div>
   <div class="row">
     <div class="left">
-      <input type="text" value="" class="newName" placeholder="input your new name" ref="userName" hide={ loginState==="oldUser" || loginState==="readyToGo"}>
+      <input class="newName" type="text" value="" placeholder="input your new name" ref="userName" hide={ loginState==="oldUser" || loginState==="readyToGo"}>
     </div>
     <div class="right">
       <button type="button" onclick="{getChrisDataNewId}"  class="btn btn-primary" hide={ loginState==="oldUser" || loginState==="readyToGo"}>SUBMIT</button>
@@ -43,7 +43,8 @@ readyToStart(){
 
 
 <style>
-    :scope{}
+:scope{}
+
 .newName{
   font-size: 25px;
 }

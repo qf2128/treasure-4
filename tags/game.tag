@@ -1,10 +1,10 @@
 <game>
-  <div class="container" hide={this.gameState||this.state==="join"}>
+  <div class="container backset" hide={this.gameState||this.gameState==="join"}>
    <div class="buttons" hide={this.state==="newGame"||this.state==="join"}>
         <button type="button" class="btn btn-primary btn-lg" name="button" onclick={newGame} style="margin-right:5%">Create New Game</button>
         <button type="button" class="btn btn-primary btn-lg" name="button" onclick={join} style="margin-right:5%">Join A Game</button>
         <button type="button" name="button"  class="btn btn-primary btn-lg" onclick={resume}>Resume Previous Game</button>
-        <play if={this.gameState==="autoplay"}></play>
+
    </div>
 
    <div class="row1" if={this.state==="newGame"} hide={this.gameState==="autoplay"}>
@@ -26,9 +26,9 @@
      <button type="button" name="button" class="btn btn-primary" onclick={startGameFriend}>Start game</button>
   </div>
 
-  <div class="">
-    <play if={this.gameState==="autoplay"}||{this.gameState==="readyWithFriends"} hide={!this.gameState}></play>
-  </div>
+
+    <play if={this.gameState==="autoplay"}||{this.gameState==="readyWithFriends"} hide={!this.gameState||this.gameState==="join"}></play>
+
 
   <joinFriend if={this.gameState==="join"}></joinFriend>
 
@@ -100,7 +100,7 @@ console.log('select',this.gameState)
 
 
 join(){
-    this.state="join";
+    this.gameState="join";
 }
 
 </script>
@@ -108,7 +108,7 @@ join(){
 <style>
  :scope{}
 
- .container {
+ .backset {
      background-image: url(./asset/map.jpg);
      background-repeat:no-repeat;
      height:1000px;

@@ -50,17 +50,6 @@ stateLogin(){
 <style>
     :scope{}
 
- button{
-  font-size:70px;
- }
-
- p{
-  font-size:30px;
- }
-
- input{
-  font-size:50px;
- }
 
  .center{
    margin-left:27%;
