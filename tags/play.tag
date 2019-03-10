@@ -136,7 +136,7 @@ playCard(){
 
      this.update();
      document.getElementById(this.cardNumber).style.color = "black";
-     //alert("This button is disabled afterward.");
+     //alert("You can no longer play this card.");
       if (lengthInTurns==13){
           this.state="gameOver"
       }
