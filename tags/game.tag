@@ -2,7 +2,7 @@
   <div class="container backset" hide={this.gameState||this.gameState==="join"}>
    <div class="buttons" hide={this.state==="newGame"||this.state==="join"}>
         <button type="button" class="btn btn-primary btn-lg" name="button" onclick={newGame} style="margin-right:5%">Create New Game</button>
-        <button type="button" class="btn btn-primary btn-lg" name="button" onclick={join} style="margin-right:5%">Join A Game</button>
+        <button type="button" class="btn btn-primary btn-lg" name="button" onclick={join} style="margin-right:5%">Join Your Friend's Game</button>
         <button type="button" name="button"  class="btn btn-primary btn-lg" onclick={resume}>Resume Previous Game</button>
 
    </div>
