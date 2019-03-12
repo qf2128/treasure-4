@@ -94,7 +94,7 @@ console.log('select',this.gameState)
 
             var playFriend=true;
             observer.trigger('playState:friend',playFriend);
-        
+
        //this.update();
    }
 }

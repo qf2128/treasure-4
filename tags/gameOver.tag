@@ -19,9 +19,6 @@ if (userScore>oppoScore){
     this.result="Sorry, you loose, want to try again?"
     this.endImage="sadpirate"
 }
-console.log('ussss',userScore)
-console.log('opppp',oppoScore)
-
 
 </script>
 

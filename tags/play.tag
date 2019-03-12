@@ -15,7 +15,6 @@
 
         <div id="middle" class="col-3" show={this.playState==="startPlay"}>
           <p if={this.playState==="startPlay"}>  Round {this.turns}: <br>The value of treasure for this round is {this.treasure}</p>
-          <p> Your opponent {this.opponent} played {this.oppoTurns} </p>
           <img src="./asset/{this.treasureImage}.jpg" alt="player" style="height:200px;width:200px;">
         </div>
         <div id="right" class="col-1">
@@ -53,6 +52,7 @@ this.userInfo=[{
     myName:userName
 }]
 
+
 observer.on('playState:friend',(playFriend)=>{
     this.playFriend=playFriend;
     console.log("FFFFFF", this.playFriend)
@@ -75,19 +75,19 @@ observer.on('play:treasure',(treasure)=>{
  console.log('frind trasure', this.treasure)
 })
 
+// after the user start to play, the timer is  on to  detect whether the opponent has played card or not
 startPlay(){
  console.log('this',event.target);
     this.playState="startPlay";
     this.timer=setInterval(refreshInfo,1000)
 }
 
+// fetchInfo is a function to fetch the dara from the server when  the player cick the card button
 var fetchInfo=()=>{
-
     this.gameId=this.parent.gameId;
     this.userId=this.parent.userId;
      console.log('iiii',this.parent.userId);
     var userId=this.userId;
-
     fetch('http://treasure.chrisproctor.net/players/'+ this.userId +'/games/' +this.gameId + '/play/' + this.cardNumber).then(response => {
          return response.json();
      }).then(data => {
@@ -115,6 +115,7 @@ var fetchInfo=()=>{
                         this.oppoTurns=currentTurns[key]
                         this.opponent=key
                         alert(this.opponent +":"+this.oppoTurns)
+                        clearInterval(this.timer)
                         console.log('data.turns',data.turns)
                     }
                     }
@@ -155,6 +156,14 @@ var fetchInfo=()=>{
      observer.trigger('oppoScore',oppoScore)
 }
 
+
+playCard(){
+    this.cardNumber=event.target.name;
+    console.log('xxxxx',this)
+    fetchInfo()
+}
+
+// refreshInfor function can fetch the data constently after the user play the card
 var refreshInfo=()=>{
     this.gameId=this.parent.gameId;
     this.userId=this.parent.userId;
@@ -186,7 +195,8 @@ var refreshInfo=()=>{
                     if (key !=userName && key!="treasure"){
                         this.oppoTurns=currentTurns[key]
                         this.opponent=key
-                        //alert(this.opponent +":"+this.oppoTurns)
+                        alert(this.opponent +":"+this.oppoTurns)
+                        clearInterval(this.timer)
                         this.update()
                         console.log('data.turns',data.turns)
                     }
@@ -212,8 +222,8 @@ var refreshInfo=()=>{
 
      this.turns=data.turns.length;
      this.playCardState="CardPlay";
+        //alert("This button is disabled afterward.");
 
-     //alert("This button is disabled afterward.");
       if (lengthInTurns==13){
           this.state="gameOver"
       }
@@ -224,11 +234,8 @@ var refreshInfo=()=>{
      observer.trigger('oppoScore',oppoScore)
 
 }
-playCard(){
-    this.cardNumber=event.target.name;
-    console.log('xxxxx',this)
-    fetchInfo()
-}
+
+
 
 
 
