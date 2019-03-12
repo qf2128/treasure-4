@@ -78,7 +78,7 @@ observer.on('play:treasure',(treasure)=>{
 startPlay(){
  console.log('this',event.target);
     this.playState="startPlay";
-    this.timer=setInterval(refreshInfo,3000)
+    this.timer=setInterval(refreshInfo,1000)
 }
 
 var fetchInfo=()=>{
@@ -187,6 +187,7 @@ var refreshInfo=()=>{
                         this.oppoTurns=currentTurns[key]
                         this.opponent=key
                         //alert(this.opponent +":"+this.oppoTurns)
+                        this.update()
                         console.log('data.turns',data.turns)
                     }
                     }
@@ -212,8 +213,6 @@ var refreshInfo=()=>{
      this.turns=data.turns.length;
      this.playCardState="CardPlay";
 
-     this.update();
-     document.getElementById(this.cardNumber).style.color = "black";
      //alert("This button is disabled afterward.");
       if (lengthInTurns==13){
           this.state="gameOver"
